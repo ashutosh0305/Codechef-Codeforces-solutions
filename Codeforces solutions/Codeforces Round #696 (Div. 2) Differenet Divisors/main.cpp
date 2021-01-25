@@ -1,14 +1,32 @@
 #include <bits/stdc++.h>
-/*
+
 using namespace std;
-int gcd(int a,int b)
+/*
+int findnextprime(int te){
+if(te%i==1
+int __gcd(int a,int b)
 {
 
     if(b==0)
     {
         return a;
     }
-    return gcd(b,a%b);
+    return __gcd(b,a%b);
+}
+*/
+bool isprime(int next)
+{
+    int sqnext=sqrt(next);
+    for(int i=2;i<=sqnext;i++)
+    {
+        if(next%i==0)
+        {
+
+            return false;
+        }
+
+    }
+    return true;
 }
 int main()
 {
@@ -22,28 +40,49 @@ int main()
 
      int d;
      cin>>d;
+int ans=1,nvalue=0;
 
+  //   int a=1+(2*d);
+  //   int b=1+d;
+     for(int i=0;i<2;i++)
+     {
+         nvalue=ans+d;
+         bool flag=true;
+          while(flag)
+          {
 
-     int a=1+(2*d);
-     int b=1+d;
+              if(isprime(nvalue))
+              {
 
-     int g=gcd(a,b);
-     int lcm=(a*b)/g;
+                  ans*=nvalue;
+                  break;
+              }
+              else{
+                nvalue++;
+              }
+          }
+     }
+     cout<<ans<<endl;
+     /*
+     int g=__gcd(a,b);
+     int l=(a*b)/g;
 
-     if(a==lcm)
+     if(a==l)
      {
 
-         lcm=2*lcm;
-          cout<<lcm<<endl;
+         l=2*l;
+          cout<<l<<endl;
      }
      else{
-        cout<<lcm<<endl;
+        cout<<l<<endl;
      }
+     */
 
  }
+ return 0;
 }
-*/
 
+/*
 #include<cmath>
 using namespace std;
 
@@ -92,3 +131,4 @@ int main() {
 	}
 	return 0;
 }
+*/
