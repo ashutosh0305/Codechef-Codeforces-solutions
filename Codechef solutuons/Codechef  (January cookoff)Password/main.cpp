@@ -22,49 +22,43 @@ int main()
         int flagdi=0;
         for(int i=0;i<n;i++)
         {
-            if(isupper(s[i]))
-            {
-                if(i>0 && i<n-1)
-                {
-                flagup=1;
 
-                }
-                else
-                {
-                    break;
-                }
-
-            }
-            if(s[i]=='@'||s[i]=='#'||s[i]=='%'||s[i]=='&'||s[i]=='?')
-            {
-                flagch=1;
-            }
             if(islower(s[i]))
             {
 
                 flaglo=1;
             }
-            if(isdigit(s[i]-'0'))
+            if(i>0 && i<n-1)
             {
-               if(i>0 && i<n-1)
-               {
-                   flagdi=1;
-               }
-               else
-               {
-                   break;
-               }
+            if(isupper(s[i]))
+            {
+
+                flagup=1;
+
+            }
+            if(s[i]=='@'||s[i]=='#'||s[i]=='%'||s[i]=='&'||s[i]=='?')
+            {
+
+                flagch=1;
 
             }
 
+            if(s[i]=='0' ||s[i]=='1' || s[i]=='2'||s[i]=='3'|| s[i]=='4'||s[i]=='5'|| s[i]=='6' || s[i]=='7'||s[i]=='8'|| s[i]=='9')
+            {
+
+                   flagdi=1;
+
+            }
+            }
+
         }
-        if(flagup && flagch && flaglo && flagdi)
+        if(flagup==1 && flagch==1 && flaglo==1 && flagdi==1)
         {
 
             cout<<"YES"<<endl;
         }
         else{
-            cout<<"No"<<endl;
+            cout<<"NO"<<endl;
         }
         }
         else{
